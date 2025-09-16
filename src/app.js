@@ -20,6 +20,7 @@ function askGuess() {
 
     if (!checkIsValidUserInput(guess)) {
       console.log('Invalid input! Must be 4 different digits.');
+
       return askGuess();
     }
 
