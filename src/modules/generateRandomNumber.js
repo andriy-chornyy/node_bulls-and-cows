@@ -16,9 +16,9 @@ function generateRandomNumber() {
     [digits[i], digits[j]] = [digits[j], digits[i]];
   }
 
-  const result = digits.slice(0, 4);
+  const result = digits.slice(2, 6);
 
-  return +result.join('');
+  return result.join('');
 }
 
 module.exports = {
