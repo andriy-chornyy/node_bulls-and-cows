@@ -16,15 +16,15 @@ const rl = readline.createInterface({
 
 function askGuess() {
   rl.question('Enter your guess: ', (answer) => {
-    const guess = answer.trim();
-
-    if (!checkIsValidUserInput(guess)) {
-      console.log('Invalid input! Must be 4 different digits.');
+    if (!checkIsValidUserInput(answer)) {
+      console.log(
+        'Invalid input! Must be 4 different digits and not start with 0.',
+      );
 
       return askGuess();
     }
 
-    const result = getBullsAndCows(guess, numberToGuess);
+    const result = getBullsAndCows(answer, numberToGuess);
 
     console.log(`Bulls: ${result.bulls}, Cows: ${result.cows}`);
 

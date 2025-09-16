@@ -1,7 +1,4 @@
 'use strict';
-
-// const { generateRandomNumber } = require('./generateRandomNumber');
-// const { checkIsValidUserInput } = require('./checkIsValidUserInput');
 /**
  * Calculate the number of bulls and cows for a given user input.
  * Bulls are digits that are in the correct position.
