@@ -18,16 +18,17 @@ function generateRandomNumber() {
 
   const result = digits.slice(0, 4);
 
-  if (result[0] === '0') {
-    for (let i = 1; i < result.length; i++) {
-      if (result[i] !== '0') {
-        [result[0], result[i]] = [result[i], result[0]];
-        break;
-      }
-    }
-  }
+  // if (result[0] === '0') {
+  //   for (let i = 1; i < result.length; i++) {
+  //     if (result[i] !== '0') {
+  //       [result[0], result[i]] = [result[i], result[0]];
+  //       break;
+  //     }
+  //   }
+  // }
 
-  return +result.join('');
+  return result.join('');
+  // return +result.join('');
 }
 
 module.exports = {
