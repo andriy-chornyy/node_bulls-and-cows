@@ -12,8 +12,10 @@
  */
 
 function checkIsValidUserInput(userInput) {
-  if (typeof userInput !== 'string') return false;
-  
+  if (typeof userInput !== 'string') {
+    return false;
+  }
+
   if (userInput.length !== 4) {
     return false;
   }
