@@ -8,44 +8,27 @@
  * @return {boolean} - True if the user input is valid, false otherwise
  */
 
- function checkIsValidUserInput(userInput) {
-  const notNumber = isNaN(+userInput);
-  if (notNumber) {
+function checkIsValidUserInput(userInput) {
+  if (typeof userInput !== 'string') {
     return false;
   }
-  if (userInput[0] === '0' || userInput.length !== 4) {
+
+  if (userInput.length !== 4) {
     return false;
   }
-  for (let i = 0; i < userInput.length; i++) {
-    if (userInput.slice(0, i).includes(userInput[i])) {
-      return false;
-    }
+
+  if (!/^\d{4}$/.test(userInput)) {
+    return false;
+  }
+
+  const set = new Set(userInput);
+
+  if (set.size !== 4) {
+    return false;
   }
 
   return true;
 }
-
-// function checkIsValidUserInput(userInput) {
-//   if (typeof userInput !== 'string') {
-//     return false;
-//   }
-
-//   if (userInput.length !== 4) {
-//     return false;
-//   }
-
-//   if (!/^\d{4}$/.test(userInput)) {
-//     return false;
-//   }
-
-//   const set = new Set(userInput);
-
-//   if (set.size !== 4) {
-//     return false;
-//   }
-
-//   return true;
-// }
 
 module.exports = {
   checkIsValidUserInput,
