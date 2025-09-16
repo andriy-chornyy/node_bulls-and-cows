@@ -18,7 +18,7 @@ function askGuess() {
   rl.question('Enter your guess: ', (answer) => {
     if (!checkIsValidUserInput(answer)) {
       console.log(
-        'Invalid input! Must be 4 different digits.',
+        'Invalid input! Must be 4 different digits and not start with 0.',
       );
 
       return askGuess();

@@ -12,13 +12,15 @@
  */
 
 function checkIsValidUserInput(userInput) {
+  if (typeof userInput !== 'string') return false;
+  
   if (userInput.length !== 4) {
     return false;
   }
 
-  // if (userInput[0] === '0') {
-  //   return false;
-  // }
+  if (userInput[0] === '0') {
+    return false;
+  }
 
   if (!/^\d{4}$/.test(userInput)) {
     return false;
